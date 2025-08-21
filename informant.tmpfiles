@@ -1,0 +1,5 @@
+# save file
+f /var/lib/informant.dat 0664 root informant
+
+# cache dir, here 2 in 2775 is for setgid
+d /var/cache/informant 2775 root informant

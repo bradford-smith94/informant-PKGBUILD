@@ -2,19 +2,6 @@ CLEAR="$(tput sgr0)"
 YELLOW="$(tput bold)$(tput setaf 3)"
 
 post_install() {
-    groupadd informant 2>/dev/null
-
-    # save file
-    touch /var/lib/informant.dat
-    chgrp informant /var/lib/informant.dat
-    chmod 664 /var/lib/informant.dat
-
-    # cache dir
-    mkdir -p /var/cache/informant 2>/dev/null
-    chgrp informant /var/cache/informant
-    chmod 775 /var/cache/informant
-    chmod g+s /var/cache/informant
-
     printf "%sNOTE%s: Add yourself to group \"informant\" to avoid the need for sudo\n" "$YELLOW" "$CLEAR"
 }
 
